@@ -284,7 +284,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #30edf7, #d7dbdb);
+  background: linear-gradient(135deg, #30edf7, #04283e);
   color: white;
   text-align: center;
 }
