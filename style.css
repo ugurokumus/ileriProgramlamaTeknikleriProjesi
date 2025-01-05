@@ -1,0 +1,381 @@
+body {
+  background-color: lightgreen;
+
+  /* Smoothly transition the background color */
+  transition: background-color 0.5s;
+}
+
+.player {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.track-art {
+  margin: 25px;
+  height: 250px;
+  width: 250px;
+  background-image: url("https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+  border-radius: 15%;
+}
+
+.now-playing {
+  font-size: 1rem;
+}
+
+.track-name {
+  font-size: 3rem;
+}
+
+.track-artist {
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.playpause-track,
+.prev-track,
+.next-track {
+  padding: 25px;
+  opacity: 0.8;
+
+  /* Smoothly transition the opacity */
+  transition: opacity 0.2s;
+}
+
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+  opacity: 1;
+}
+
+.slider_container {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seek_slider,
+.volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.seek_slider:hover,
+.volume_slider:hover {
+  opacity: 1;
+}
+
+.seek_slider {
+  width: 60%;
+}
+
+.volume_slider {
+  width: 30%;
+}
+
+.current-time,
+.total-duration {
+  padding: 10px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
+}
+
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+  cursor: pointer;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#search-input {
+  width: 50%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+#search-results {
+  position: relative; /* Artık mutlak değil */
+  margin-top: 5px; /* Arama çubuğu ile arasına boşluk bırakır */
+  z-index: 1;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  width: 60%; /* Search input genişliğine uyum sağlar */
+  margin-left: auto;
+  margin-right: auto;
+}
+button:hover{
+  background-color: #dbc0c0;
+  color: rgb(29, 27, 27);
+  transition: background-color 0.4s;
+}
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-left: auto;
+  border: none;
+  background-color: #240808;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#search-results div {
+  font-size: 17px;
+  padding: 12px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content:baseline;
+  align-items: center;
+}
+
+#search-results div button {
+  padding: 7px 20px;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #e99904;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+#search-results div:hover {
+  background-color: #f4f4f4;
+}
+/* Track List Styles */
+#track-list-container {
+  margin-top: 20px; /* Arama sonuçları ile arasına boşluk ekler */
+  padding: 20px;
+  background-color: #41524f86;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 4px 10px #36534e86;
+  width: 50%; /* Arama çubuğu ile aynı genişlikte olur */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#track-list-container h3 {
+  font-size: 40px;
+  margin-bottom: 12px;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  color: #ecf0f1;
+}
+
+#track-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#track-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #1f324553;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+#track-list li:hover {
+  background-color: #1c252e9c;
+}
+
+#track-list li .track-name {
+  font-size: 18px;
+  font-weight: bold;
+  flex: 1;
+  color: #ecf0f1;
+}
+
+#track-list li .track-artist {
+  font-size: 16px;
+  color: #bdc3c7;
+}
+
+#track-list li .track-duration {
+  font-size: 14px;
+  color: #95a5a6;
+}
+
+#track-list li .play-btn {
+  color: #ecf0f1;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#track-list li .play-btn:hover {
+  color: #38425d8e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Tanıtım Sayfası */
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6e7f80, #d7dbdb);
+  color: white;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.intro p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.cta-btn {
+  padding: 12px 24px;
+  background-color: #ff6347;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.cta-btn:hover {
+  background-color: #ff4500;
+}
+
+/* Projeler Bölümü */
+.projects {
+  padding: 4em 2em;
+  background-color: #fff;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5em;
+  margin-bottom: 2em;
+  color: #333;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.project-card {
+  background-color: #e9e9e9;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+.project-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.project-card p {
+  font-size: 1em;
+  color: #777;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.project-link:hover {
+  background-color: #0056b3;
+}
