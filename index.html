@@ -1,60 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Music Player</title>
-  <!-- Load FontAwesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
-  <!-- Load the custom CSS style file -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <div class="search-container">
-    <input 
-    type="text" 
-    id="search-input" 
-    placeholder="Search for a song..." 
-    oninput="liveSearch(this.value)" />
-  </div>
-  <div id="search-results"></div>
 
-  <!-- Track List Container -->
-  <div id="track-list-container">
-    <h3>Your Track List</h3>
-    <ul id="track-list">
-      <!-- Tracks will be dynamically inserted here -->
-    </ul>
-  </div>
+    <!-- Tanıtım Sayfası -->
+    <section class="intro" id="intro">
+        <div class="intro-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm [Your Name]. I'm a web developer and here are my projects.</p>
+            <a href="#projects" class="cta-btn">See My Projects</a>
+        </div>
+    </section>
 
-  <div class="player">
-    <div class="details">
-      <div class="now-playing">PLAYING x OF y</div>
-      <div class="track-art"></div>
-      <div class="track-name">Track Name</div>
-      <div class="track-artist">Track Artist</div>
-    </div>
-    <div class="buttons">
-      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
-      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-    </div>
-    
-    <div class="slider_container">
-      <div class="current-time">00:00</div>
-      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-      <div class="total-duration">00:00</div>
-    </div>
-    <div class="slider_container">
-      <i class="fa fa-volume-down"></i>
-      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-      <i class="fa fa-volume-up"></i>
-    </div>
-  </div>
+    <!-- Projeler Bölümü -->
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <!-- Proje 1 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/250" alt="Project Image">
+                <h3>Project One</h3>
+                <p>A description of project one goes here.</p>
+                <a href="home.html" target="_blank" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Load the main script for the player -->
-  <script src="script.js"></script>
 </body>
 </html>
+
