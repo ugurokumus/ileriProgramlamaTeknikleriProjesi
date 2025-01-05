@@ -289,6 +289,12 @@ body {
   text-align: center;
 }
 
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .intro h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
@@ -306,18 +312,32 @@ body {
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.1em;
+  margin-bottom: 20px; /* Logolarla buton arasında boşluk bırakır */
 }
-.cta-btn-logo {
-  width: 50px;
-  height: 50px;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-}
+
 .cta-btn:hover {
   background-color: #ff4500;
 }
+
+.intro-content div {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Logolar arasındaki boşluk */
+  margin-top: 10px; /* Düğme ile logolar arasındaki boşluk */
+}
+
+.intro-content div a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30%; /* Yuvarlak logo görünümü için */
+  transition: transform 0.5s;
+}
+
+.intro-content div a img:hover {
+  transform: scale(1.35); /* Hover sırasında logoları büyütme efekti */
+  cursor: pointer;
+}
+
 
 /* Projeler Bölümü */
 .projects {
