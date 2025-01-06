@@ -306,3 +306,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTrack(track_index); // Load the first track
   }
 });
+
+document.getElementById('cors-link').addEventListener('click', function () {
+  const alertBox = document.getElementById('alert-box');
+  if (alertBox) {
+    alertBox.remove(); // Uyarı kutusunu DOM'dan sil
+  }
+});
