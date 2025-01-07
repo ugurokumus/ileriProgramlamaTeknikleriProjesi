@@ -126,50 +126,6 @@ function seekUpdate() {
   }
 }
 
-async function searchTracks() {
-  const query = document.getElementById("search-input").value;
-  if (!query) {
-    alert("Please enter a search term!");
-    return;
-  }
-
-  const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${query}`;
-
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      throw new Error('Failed to fetch data from Deezer API');
-    }
-    const data = await response.json();
-    displaySearchResults(data.data);
-  } catch (error) {
-    console.error("Error fetching search results:", error);
-    alert("Sorry, something went wrong while fetching data.");
-  }
-}
-
-function displaySearchResults(tracks) {
-  const searchResults = document.getElementById("search-results");
-  searchResults.innerHTML = "";
-
-  if (tracks.length === 0) {
-    searchResults.innerHTML = "<p>No tracks found.</p>";
-    return;
-  }
-
-  tracks.forEach(track => {
-    const trackDiv = document.createElement("div");
-    trackDiv.innerHTML = `
-      <span>${track.title} by ${track.artist.name}</span>
-      <button onclick="addToTrackList('${track.title}', '${track.artist.name}', '${track.album.cover}', '${track.preview}')">
-        Add to Tracklist
-      </button>
-    `;
-    searchResults.appendChild(trackDiv);
-  });
-}
-
-
 let debounceTimer;
 
 function liveSearch(query) {
